@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Nav({ total }) {
+function Nav({ cartItems }) {
   return (
     <div id="nav-body">
       <span id="title">
@@ -11,7 +11,7 @@ function Nav({ total }) {
       <div id="menu">
         <Link to="/">상품리스트</Link>
         <Link to="/shoppingcart">
-          장바구니<span id="nav-item-counter">{total}</span>
+          장바구니<span id="nav-item-counter">{cartItems.length}</span>
         </Link>
       </div>
     </div>

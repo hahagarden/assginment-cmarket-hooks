@@ -11,15 +11,9 @@ function App() {
   const [items, setItems] = useState(initialState.items);
   const [cartItems, setCartItems] = useState(initialState.cartItems);
 
-  const getQuantityOfCartItems = () => {
-    let total = 0;
-    cartItems.forEach((item) => (total += item.quantity));
-    return total;
-  };
-
   return (
     <Router>
-      <Nav total={getQuantityOfCartItems()} />
+      <Nav cartItems={cartItems} />
       <Routes>
         <Route path="/" element={<ItemListContainer items={items} cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/shoppingcart" element={<ShoppingCart cartItems={cartItems} setCartItems={setCartItems} items={items} />} />
